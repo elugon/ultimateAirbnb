@@ -2,7 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import airbnbLogo from '../public/img/airbnbLogo.png'
 import { GoSearch } from 'react-icons/go';
-
+import { BsGlobe } from 'react-icons/bs';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { HiUserCircle } from 'react-icons/hi';
 
 type Props = {}
 
@@ -17,11 +19,21 @@ export default function Header({}: Props) {
             />
         </div>
 
-        <div className='flex items-center md:border-2 rounded-full py-2'>
-            <input className='flex-grow pl-5 bg-transparent outline-none' type="text"
+        <div className='flex items-center md:border-2 md:shadow-sm rounded-full py-2'>
+            <input className='flex-grow pl-5 bg-transparent outline-none placeholder-gray-400' type="text"
             placeholder='Start your search' />
-            <GoSearch className='hidden md:inline-flex h-8 w-8 bg-red-400 text-white rounded-full p-2 cursor-pointer'/>
-                  
+            <GoSearch className='hidden md:inline-flex h-8 w-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2'/>
+        </div>
+
+        <div className='flex items-center justify-end space-x-4 text-gray-500 '>
+          <p className='hidden md:inline cursor-pointer'>Become a host</p>
+          <BsGlobe className='h-6 w-6 cursor-pointer'/>
+
+          <div className='flex items-center space-x-2 border-2 p-2 rounded-full'>
+            <AiOutlineMenu className='h-6 w-6'/>
+            <HiUserCircle className='h-6 w-6'/>
+          </div>
+
         </div>
 
     </header>
